@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Click the button to demonstrate the prompt box.</p>
+
+<button onClick="myFunction()">Try it</button>
+
+<p id="demo" align="center"></p>
+
+<script>
+function myFunction()
+{
+var x,y,sum;
+
+var x=prompt("Please enter number 1","5");
+var y=prompt("Please enter number 2","5");
+
+
+if (x!=null && y!=null)
+  {
+  sum=parseInt(x)+parseInt(y);
+  document.getElementById("demo").innerHTML="The sum of above two numbers is: "+sum;
+
+  }
+}
+</script>
+
+</body>
+</html>
+
