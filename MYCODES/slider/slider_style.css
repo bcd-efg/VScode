@@ -1,0 +1,40 @@
+body{
+	margin:0;
+}
+.slide-container{
+	position: relative;
+	width: 100%;
+}
+.slide img{
+	width: 100%;
+}
+.arrow{
+	cursor: pointer;
+	position: absolute;
+	top:45%;
+	color: rgb(183, 122, 171);
+	background-color: rgba(19, 7, 58,0.6);
+	padding: 8px 15px;
+	border-radius: 50%;
+	font-size: 25px;
+	font-weight: bold;
+}
+.next{
+	right: 10px;
+}
+.prev{
+	left: 10px;
+}
+.caption{
+	color: rgb(255, 170, 170);
+	font-size: 30px;
+	font-weight: bold;
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	text-align: center;
+	background-color: rgba(85, 0, 0,0.5);
+}
+.slide{
+	display: none;
+}

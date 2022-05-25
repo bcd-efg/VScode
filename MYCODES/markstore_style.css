@@ -1,0 +1,20 @@
+/* *{
+    margin: 0;
+    padding: 0;
+} */
+body{
+    font-family: 'Bungee', cursive;
+}
+.head{
+    display: flex;
+    background-color: rgb(127, 207, 182);
+    color: rgb(25, 25, 82);
+    justify-content: center;
+    align-items: center;
+}
+legend{
+    background-color: rgb(127, 207, 182);
+    color: rgb(25, 25, 82);
+    font-weight: bold;
+    text-align: center;
+}

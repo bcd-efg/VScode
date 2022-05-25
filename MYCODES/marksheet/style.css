@@ -1,0 +1,145 @@
+/* CSS Reset */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+/* CSS Variables */
+:root{
+    --navbar-height: 59px;
+}
+#navbar{
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0px;
+}
+
+#navbar::before{
+    content: "";
+    background-color: rgb(237, 248, 255);
+    position: absolute;
+    top:0px;
+    left:0px;
+    height: 100%;
+    width:100%;
+    z-index: -1;
+    opacity: 0.7;
+}
+#logo{
+    margin: 10px 34px;
+}
+
+#logo img{
+    height: 60px;
+    margin: 3px 6px;
+}
+
+
+/* Navigation Bar: List Styling */
+
+#navbar ul{
+    display: flex;
+    
+}
+
+#navbar ul li{ 
+    list-style: none;
+    font-size: 1rem;
+    font-family: 'Bungee', cursive;
+}
+
+#navbar ul li a{
+    color: rgb(34, 109, 153);
+    display: block;
+    padding: 3px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+}
+
+#navbar ul li a:hover{
+    color: white;
+    background-color: rgba(34, 109, 153, 0.993);
+}
+
+/* home section */
+#home{
+    display: flex;
+    flex-direction: column;
+    padding:3px 200px;
+    height: 550px;
+    justify-content: center;
+    align-items: center;
+}
+
+#home::before{ 
+    content: "";
+    position: absolute;
+    background: url('bg1.png') no-repeat center center/cover;
+    height: 700px;
+    top:0px;
+    left:0px;
+    width: 100%;
+    z-index: -1;
+    opacity:0.9;
+}
+
+#home h1{
+    color:rgb(25, 22, 68);
+    text-align: center;
+    font-family: 'Special Elite', cursive;
+    font-size: 2.0rem;
+}
+
+#home p{
+    color:rgb(25, 22, 68);
+    text-align: center;
+    font-size: 2.0rem;
+    font-family: 'Special Elite', cursive;
+}
+/* GENERATOR SECTION */
+#generator{
+    display: flex;
+    flex-direction: column;
+    padding:50px 50px;
+    padding-bottom: 0px;
+    height: 200px;
+    justify-content: center;
+    
+}
+#generator::before{ 
+    content: "";
+    position: absolute;
+    background: url('bg2.jpg') no-repeat center center/cover;
+    height: 195px;
+    left: 0px;
+    width: 100%;
+    z-index: -1;
+    opacity:0.9;
+}
+#generator h1{
+    color:rgb(25, 22, 68);
+    font-family: 'Special Elite', cursive;
+    font-size: 2.0rem;
+}
+#generator a{
+    font-family: 'Special Elite', cursive;
+    display: block;
+    font-size: 1.2rem;
+}
+#generator a:hover{
+    text-decoration: none;
+    color: rgb(34, 109, 153);
+}
+/* FOOTER */
+footer{
+    background: rgb(22, 15, 48);
+    text-align: center;
+    color: white;
+    padding: 5px 20px;
+}
+

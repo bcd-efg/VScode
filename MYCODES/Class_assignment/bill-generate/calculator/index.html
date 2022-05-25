@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+        }
+        form{
+            border: 2px solid rgb(14, 14, 54);
+        }
+         .cal{
+                border-radius: 10px;
+                background-color: aqua;
+                color: rgb(16, 14, 48);
+                width: 490px;
+                padding: 4px;
+                font-size: 15px;
+                font-family: sans-serif;
+
+            }
+        input[type=number] {
+                color: black;
+                font-family: sans-serif;
+                font-size: 15px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+        }
+        #r{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div>
+     <form class="cal">
+        <label>Enter first number</label><br><input type="number" id="n1" tabindex="1">
+        <br>
+        <label>Enter second number</label><br><input type="number" id="n2" tabindex="2">
+        <br>
+        <input type="button" id="a" tabindex="3" value="ADD" onclick="add()">
+        <input type="button" id="s" tabindex="4" value="SUB" onclick="sub()" >
+        <br>
+        <input type="button" id="p" tabindex="5" value="PROD" onclick="prod()" >
+        <input type="button" id="d" tabindex="6" value="DIV" onclick="divide()">
+        <input type="reset" value="Refresh" accesskey="r">
+        <br>
+        <label for="r">Result: </label><input type="text" id="r" tabindex="8">
+     </form>   
+   
+
+    </div>
+
+   
+    
+</body>
+
+<script>
+    function add() {
+        var a = Number(document.getElementById("n1").value);
+        var b = Number(document.getElementById("n2").value);
+        var res = a+b;
+        document.getElementById("r").value = res;
+
+    }
+    function sub() {
+        var a = Number(document.getElementById("n1").value);
+        var b = Number(document.getElementById("n2").value);
+        var res = a-b;
+        document.getElementById("r").value = res;
+
+    }
+    function prod() {
+        var a = Number(document.getElementById("n1").value);
+        var b = Number(document.getElementById("n2").value);
+        var res = a*b;
+        document.getElementById("r").value = res;
+
+    }
+    function divide() {
+        var a = Number(document.getElementById("n1").value);
+        var b = Number(document.getElementById("n2").value);
+        var res = a/b;
+        document.getElementById("r").value = res;
+
+    }
+</script>
+</html>

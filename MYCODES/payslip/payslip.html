@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Payslip</title>
+        <style type="text/css">
+           .content{
+               max-width: 100%;
+               margin: auto;
+           }
+           #msg1{
+            
+            animation: mymove 15s infinite;
+           }
+           #msg2{
+            
+            animation: mymove 15s infinite;
+           }
+           @keyframes mymove {
+                0%   {background-color: red;}
+                50%  {background-color: blue;}
+                100% {background-color: darkgreen;}
+            }
+           .footer{
+                color: rgb(222, 232, 240);
+                font-size: 20px;
+                font-weight: bold;
+                text-align: center;
+                font-family:"Lucida Console", "Courier New", monospace;
+           }
+
+            #form{
+                background: rgb(72, 46, 116);
+                color: rgb(182, 203, 102);
+                font-family: "Lucida Console", "Courier New", monospace;
+                width: 50%;
+                padding: 50px;
+            }
+            .cbutton{
+                padding: 5px 15px;
+                background: #99e0b2;
+                border: 0 none;
+                cursor: pointer;
+                -webkit-border-radius: 5px;
+                border-radius: 5px;
+            }
+            legend {
+				background-color: gray;
+				color: white;
+				padding: 5px 10px;
+				border: ;
+			}
+			body {
+  				background-image: url('img_payslip.png');
+			}
+        </style>
+    </head>
+    <body>
+        <div id="form" class="content">
+            <form name="sal" style="text-align:justify;">
+                <fieldset >
+                    <legend>SALARY SLIP</legend>
+                    NAME *:<br><input type="text" placeholder="Enter your name" name="fname">
+                    <br>
+                    BASIC *:<br><input type="text" placeholder="Enter your basic salary" name="salary">
+                    <br>
+                    <br>
+                    <input class="cbutton" type="button" value="COMPUTE" onclick="calresult()">
+                    <input class="cbutton" type="RESET">
+                    <br>
+                    <br>
+                    DA:<br><input type="text" name="da">
+                    <br>
+                    HRA:<br><input type="text" name="hra">
+                    <br>
+                    PF:<br><input type="text" name="pf">
+                    <br>
+                    GROSS:<br><input type="text" name="gs">
+                    <br>
+                    NET:<br><input type="text" name="ns">
+                    <br>
+                    <br>
+                    
+                </fieldset> 
+                
+            </form>
+        </div>
+       <br>
+        <div id="msg1" class="footer"></div>
+        <br>
+        <div id="msg2" class="footer"></div>
+        <br>
+        <script type="text/javascript">
+            function calresult()
+            {
+                var n,DA,HRA,GS,NS,PF,MA=500;
+                y=document.sal.fname.value;
+                n=Number(document.sal.salary.value);
+                if (y == "") {
+                    alert("Name has to be entered");
+                    return false;
+                }else if(n=="")
+                {
+                    alert("Salary has to be entered");
+                    return false;
+                }
+                else
+                {
+                    DA = n * 0.3;
+                    HRA = n * 0.15;
+                    PF = (n*12)/100;
+                    GS = n + HRA + DA + MA + PF;
+                    NS = GS - PF;
+                    document.sal.da.value=DA;
+                    document.sal.hra.value=HRA;
+                    document.sal.gs.value=GS;
+                    document.sal.pf.value=PF;
+                    document.sal.ns.value=NS;
+                    document.getElementById("msg1").innerHTML = y+": GROSS Salary is "+GS;
+                    document.getElementById("msg2").innerHTML = "NET Salary is "+NS;
+                }
+            }
+        </script>
+    </body>   
+</html>

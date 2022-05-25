@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BILL GENERATOR</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2&display=swap" rel="stylesheet">
+</head>
+
+<body onload="hide()">
+    <div class="container">
+        <h1 class="main-heading">Billing System for Superstore</h1>
+        <form action="action.php" method="POST">
+            <div class="main-fields">
+                <input type="text" name="name" placeholder="Name" id="cust-name" tabindex="1" />
+                <input type="date" id="date" name="date" value="Date" tabindex="2" />
+            </div>
+            <table class="table">
+                <thead>
+                    <tr class="heading">
+                        <th>SL</th>
+                        <th>Name</th>
+                        <th>Quantity</th>
+                        <th>Unit Price</th>
+                        <th>Total</th>
+                        <th>
+                            <button class="primary" id="add" tabindex="3" accesskey="a">Add</button>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody id="body">
+                </tbody>
+                <tfoot>
+                    <td></td>
+                    <td></td>
+                    <th colspan="2">Grand Total</th>
+                    <td id="grand-total" name="gtotal">0</td>
+                    <td><input type="text" name="output" id="output"></td>
+                </tfoot>
+            </table>
+            <input type="submit" class="primary print" id="print" value="Print" tabindex="4" accesskey="p">
+            <!-- <button class="primary print" id="print">Print</button> -->
+    </div>
+    </form>
+    <div id="snackbar"></div>
+    <script src="script.js"></script>
+</body>
+
+</html>

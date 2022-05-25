@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Play&display=swap" rel="stylesheet">
+	<title>CALCULATOR</title>
+	<script>
+		let mem = 0;
+		let mem1 = 0;
+
+		function clearscreen() {
+			document.getElementById("result").value = ""
+			document.getElementById("result2").value = ""
+		}
+		function display(value) {
+			document.getElementById("result").value += value
+
+		}
+		function calculate() {
+			var p = document.getElementById("result").value
+
+			var q = eval(p)
+			if (isFinite(q) == false) {
+				alert("division by 0")
+			}
+			else {
+				document.getElementById("result2").value = p;
+				document.getElementById("result").value = q;
+			}
+		}
+		function BS() {
+			var p = document.getElementById("result").value; //collecting current displa item
+			var len = p.length; //storing length of the string currently in display
+			p = p.slice(0, len - 1); //deleting llast element
+			document.getElementById("result").value = p;
+		}
+		function MC() {
+			mem = 0;
+		}
+		function MR() {
+			document.getElementById("result").value = mem;
+		}
+		function MS() {
+			var p = document.getElementById("result").value;
+			mem = Number(p);
+			var text = 'M';
+			document.getElementById("result2").value = text;
+
+		}
+		function Mp() {
+			var p = Number(document.getElementById("result").value);
+			mem = mem + p;
+			var text = 'M+';
+			document.getElementById("result2").value = text;
+		}
+
+	</script>
+</head>
+<style type="text/css">
+	.Calculator {
+		border: solid 3px black;
+		padding: 25px;
+		margin: auto;
+		background-color: whitesmoke;
+		height: 500px;
+		width: 600px;
+		border-radius: 20px;
+	}
+
+	.display-box {
+		font-size: 200%;
+		font-family: 'Play', sans-serif;
+		text-align: right;
+		background-color: rgb(174, 197, 197);
+		width: 80%;
+		height: 80%;
+		border-radius: 10px;
+		border-color: rgb(0, 0, 0);
+		color: #a73f3f;
+	}
+
+	.display-box2 {
+		font-size: 200%;
+		font-family: 'Play', sans-serif;
+		text-align: right;
+		background-color: rgb(174, 197, 197);
+		width: 80%;
+		height: 80%;
+		border-radius: 10px;
+		border-color: rgb(0, 0, 0);
+		color: rgba(30, 52, 60, 50.8);
+	}
+
+	.button {
+		font-size: 200%;
+		font-family: 'Play', sans-serif;
+		color: rgb(143, 169, 155);
+		background-color: rgb(0, 58, 33);
+		width: 70%;
+		height: 80%;
+		cursor: pointer;
+		border-radius: 30px;
+
+	}
+
+	.button2 {
+		font-size: 150%;
+		font-family: 'Play', sans-serif;
+		color: wheat;
+		background-color: rgb(94, 35, 1);
+		width: 70%;
+		height: 90%;
+		cursor: pointer;
+		border-radius: 30px;
+
+	}
+
+	.button2:hover {
+		color: rgb(94, 35, 1);
+		background-color: wheat;
+	}
+
+	.button:hover {
+		font-size: 1.2rem;
+	}
+
+	.Mbutton {
+		font-size: 200%;
+		color: aliceblue;
+		font-family: 'Play', sans-serif;
+		background-color: rgb(46, 27, 82);
+		border-radius: 20px;
+		width: 80%;
+		height: 80%;
+		cursor: pointer;
+	}
+
+	.Mbutton:hover {
+		color: rgb(46, 27, 82);
+		background-color: aliceblue;
+	}
+
+	body {
+		background: url('cal_bg.jpg') no-repeat center center/cover;
+		/* From https://css.glass */
+		border-radius: 16px;
+		box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+		backdrop-filter: blur(4.9px);
+		-webkit-backdrop-filter: blur(4.9px);
+		border: 1px solid rgba(52, 56, 72, 0.34);
+		height: 60%;
+		width: 60%;
+		display: block;
+		margin: auto;
+	}
+</style>
+
+<body>
+	<table class="Calculator" align="center">
+		<tr>
+			<td colspan="3"><input class="display-box2" type="text" id="result2"></td>
+			<td><input type="button" class="button2" value="C" onclick="clearscreen()">
+			</td>
+		</tr>
+		<tr>
+			<td colspan="3"><input class="display-box" type="text" id="result"></td>
+			<td><input type="button" class="button2" value="⌫" onclick="BS()"></td>
+		</tr>
+
+		<tr>
+			<td><input type="button" class="Mbutton" value="MC" onclick="MC()"></td>
+			<td><input type="button" class="Mbutton" value="MS" onclick="MS()"></td>
+			<td><input type="button" class="Mbutton" value="M+" onclick="Mp()"></td>
+			<td><input type="button" class="Mbutton" value="MR" onclick="MR()"></td>
+		</tr>
+		<tr>
+			<td><input type="button" class="button" value="1" onclick="display('1')">
+			</td>
+			<td><input type="button" class="button" value="2" onclick="display('2')">
+			</td>
+			<td><input type="button" class="button" value="3" onclick="display('3')">
+			</td>
+			<td><input type="button" class="button" value="+" onclick="display('+')">
+			</td>
+		</tr>
+		<tr>
+			<td><input type="button" class="button" value="4" onclick="display('4')">
+			</td>
+			<td><input type="button" class="button" value="5" onclick="display('5')">
+			</td>
+			<td><input type="button" class="button" value="6" onclick="display('6')">
+			</td>
+			<td><input type="button" class="button" value="-" onclick="display('-')">
+			</td>
+		</tr>
+		<tr>
+			<td><input type="button" class="button" value="7" onclick="display('7')">
+			</td>
+			<td><input type="button" class="button" value="8" onclick="display('8')">
+			</td>
+			<td><input type="button" class="button" value="9" onclick="display('9')">
+			</td>
+			<td><input type="button" class="button" value="/" onclick="display('/')">
+			</td>
+		</tr>
+		<tr>
+			<td><input type="button" class="button" value="." onclick="display('.')">
+			</td>
+			<td><input type="button" class="button" value="0" onclick="display('0')">
+			</td>
+			<td><input type="button" class="button" value="=" onclick="calculate()">
+			</td>
+			<td><input type="button" class="button" value="*" onclick="display('*')">
+			</td>
+		</tr>
+
+	</table>
+</body>
+
+</html>

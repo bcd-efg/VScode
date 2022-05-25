@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="mark.css">
+</head>
+<body>
+    <div class="subject-select">
+        <form id="main">
+            <table border="1">
+                <tr>
+                    <td colspan="2">DEPT</td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label for="subject_chose">SUBJECT</label>
+                    </td>
+                    <td>
+                        <select name="subject" id="subject">
+                            <option value="non">Select Subject</option>
+                            <option value="CS">Computer Science</option>
+                            <option value="PHY">Physics</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label for="sem_chose">SEMESTER</label></td>
+
+                    <td>
+                        <select name="sem" id="sem">
+                            <option value="non">Semester</option>
+                            <option value="1">Semester 1</option>
+                            <option value="2">Semester 2</option>
+                            <option value="3">Semester 3</option>
+                            <option value="4">Semester 4</option>
+                        </select>
+                    </td>
+                </tr>
+
+                
+                <tr>
+                    <td>
+                        <input type="button" value="Genarate" onclick="genarateTable()">
+                    </td>
+                    <td>
+                        <button type="reset" value="Reset" onclick="rstAll('main')">Reset</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+    <div id="printarea">
+        <div class="student-det" id="student-det"></div>
+        <div class="show-table" id="show-table"></div>
+        <div class="result" id="result"></div>
+    </div>
+
+    </div>
+</body>
+
+<script src="index.js"></script>
+</html>
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="marl.css">
+    <title>Document</title>
+</head>
+<body class="container">
+    <fieldset>
+        <legend>Student Information</legend>
+        <table class="">
+            <tr>    
+                <td>Registration No:</td>
+                <td><input type="text" value="<?php echo $reg ?>" disabled/> 
+            </tr>
+            <tr>    
+                <td>Name</td>
+                <td><input type="text" value="<?php echo $name ?>" disabled/> 
+            </tr>
+        </table>
+    </fieldset>
+
+    <fieldset>
+        <legend>Student Result</legend>
+    <table class="">
+        <tr>    
+            <td>C Programming:</td>
+            <td><input type="text" value="<?php echo $m2 ?>" style="font-weight: bold;" disabled/> 
+        </tr>
+        <tr>    
+            <td>Data Structure:</td>
+            <td><input type="text" value="<?php echo $m3 ?>" disabled/> 
+        </tr>
+        <tr>    
+            <td>AI:</td>
+            <td><input type="text" value="<?php echo $m4 ?>" disabled/> 
+        </tr>
+        <tr>    
+            <td>Networking:</td>
+            <td><input type="text" value="<?php echo $m5 ?>" disabled/> 
+        </tr>
+        <tr>    
+            <td>Frontend & Backend Design</td>
+            <td><input type="text" value="<?php echo $m3 ?>" disabled/> 
+        </tr>
+    </table>
+    </fieldset>
+
+    <fieldset>
+    <table class="">
+        <legend>Result Summary</legend>
+        <tr>    
+            <td>Total Marks</td>
+            <td>Marks Obtain</td>
+            <td>Parcentage</td>    
+            <td>Grade</td>       
+        </tr>
+        <tr>    
+            <td><input type="text" value="<?php echo $total ?>" disabled/> </td>
+            <td><input type="text" value="<?php echo $mo ?>" disabled/> 
+            <td><input type="text" id = "par" value="<?php echo $par ?>" disabled/></td>
+            <td><input type="text" value="<?php echo $grade ?>" disabled/></td>
+        </tr>
+    </table>
+    </fieldset>
+</body>
+</html> -->
