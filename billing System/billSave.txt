@@ -1,0 +1,3 @@
+Total Amount: 10100
+Discount: 20
+Payable Amount: 8080

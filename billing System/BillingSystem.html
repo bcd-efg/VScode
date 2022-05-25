@@ -1,0 +1,326 @@
+<html>
+    <head>
+        <title>Billing System</title>
+        <link rel="stylesheet" href="style.css">
+        <!-- <style>
+            
+            #list{
+                width:60%;
+                height: 70%;
+                border-radius: 6px;
+                border: 2px solid black;
+                padding: 8px;
+                margin-bottom: 10px;               
+
+            }
+
+            #item{
+                width:60%;
+                height: 10%;
+                border-radius: 6px;
+                border: 2px solid black;   
+                padding: 8px;
+                margin-bottom: 10px;  
+            }
+
+            #item2{
+                display: none;
+            }
+
+            #buttons{
+                width: 60%;
+                height: 10%;
+                border-radius: 6px;
+                padding: 8px;
+                margin-bottom: 10px;     
+            }
+
+            #bill{
+                width: 35%;
+                height: 95%;
+                border-radius: 6px;
+                border: 2px solid black;
+                padding: 8px;
+                margin-bottom: 10px;
+                margin-left: 10px;
+                top: 7px;
+                left:63%;
+                position: absolute;
+
+            }
+
+            #tablebill{
+                width: 100%;
+                border: 2px solid black;
+                border-collapse: collapse;
+                
+            }
+
+            
+
+            #table2{
+                width: 100%;
+                border: 2px solid black;
+                border-collapse: collapse;
+                display: none;
+            }
+
+            th{
+                border: 2px solid black;
+                text-align: left;
+                padding: 5px;
+
+            }
+            td{
+                text-align: left;
+                padding: 5px;
+                border-right: 2px solid black;
+            }
+
+            td:nth-child(4) ,th:nth-child(4),td:nth-child(6) ,th:nth-child(6){
+                text-align: right;
+                padding: 5px;
+                border-right: 2px solid black;
+
+            }
+
+            input[type=button]{
+                height: 45px;
+                width: 30%;
+                margin-top: 3px;
+                outline: none;
+                color: #fff;
+                border:none;
+                margin-left: 8px;
+                font-size: 18px;
+                border-radius: 5px;
+                font-weight: 500;
+                letter-spacing: 1px;
+                background: linear-gradient(135deg, #56CCF2,#2F80ED);
+            }
+
+            input[type=submit]{
+                height: 45px;
+                width: 30%;
+                margin-top: 3px;
+                outline: none;
+                color: #fff;
+                border:none;
+                margin-left: 8px;
+                font-size: 18px;
+                border-radius: 5px;
+                font-weight: 500;
+                letter-spacing: 1px;
+                background: linear-gradient(135deg, #56CCF2,#2F80ED);
+                position: relative;
+                margin-left: 33.6%;
+
+
+
+            }
+
+            #heading{
+                font-size: 25px;
+                text-align: center;
+                font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                display: none;
+ 
+
+            
+            }
+
+
+
+        </style> -->
+    </head>
+
+    <script>
+        var slno=0;
+        var calP=0.0;
+
+        function addRow()
+        {
+            slno++;
+            var id=document.getElementById("id").value;
+            var name=document.getElementById("name").value;
+            var price=(parseFloat(document.getElementById("price").value)).toFixed(2);
+            var unit=parseInt(document.getElementById("unit").value);
+            var totalP=(price*unit).toFixed(2);
+            calP=parseFloat(calP)+parseFloat(totalP);
+            //document.getElementById("totalVal").value=calP;
+
+            var table = document.getElementById('tablebill');
+            var rowCount = table.rows.length;
+            var cellCount = table.rows[0].cells.length; 
+            var row = table.insertRow(rowCount);
+            var cell0=row.insertCell(0);
+            cell0.innerHTML=slno;
+            var cell1=row.insertCell(1);
+            cell1.innerHTML=id;
+            var cell2=row.insertCell(2);
+            cell2.innerHTML=name;
+            var cell3=row.insertCell(3);
+            cell3.innerHTML=price;
+            var cell4=row.insertCell(4);
+            cell4.innerHTML=unit;
+            var cell5=row.insertCell(5);
+            cell5.innerHTML=totalP;
+
+            table = document.getElementById('table2');
+            rowCount = table.rows.length;
+            cellCount = table.rows[0].cells.length; 
+            row = table.insertRow(rowCount);
+            cell0=row.insertCell(0);
+            cell0.innerHTML=slno;
+            cell1=row.insertCell(1);
+            cell1.innerHTML=id;
+            cell2=row.insertCell(2);
+            cell2.innerHTML=name;
+            cell3=row.insertCell(3);
+            cell3.innerHTML=price;
+            cell4=row.insertCell(4);
+            cell4.innerHTML=unit;
+            cell5=row.insertCell(5);
+            cell5.innerHTML=totalP;
+
+
+        }
+
+        
+
+
+            
+            
+                
+	
+
+        
+
+        function calculate()
+        {
+            document.getElementById("item2").style.display="block";
+            document.getElementById("heading").style.display="block";
+            
+            document.getElementById("table2").style.display="inline-table";
+            document.getElementById("total").innerHTML=calP;
+            var dis=0;
+            if(calP>=5000)
+            dis=20;
+            else if (calP>=3000)
+            dis=15;
+            else if(calP>=1500)
+            dis=10;
+            else
+            dis=5;
+            document.getElementById("discount").innerHTML="Congratulations!!! You are eligible for a discount of "+ dis+" % ";
+
+            var finalV=calP-dis/100.0*calP;
+            document.getElementById("finalVal").innerHTML="Final Amount: "+finalV.toFixed(2);
+
+
+        }
+        function printing()
+        {
+            var divContents=document.getElementById("bill").innerHTML;
+            var w=window.open('','','width=500,heigth=500');
+            w.document.write('<html>');
+            w.document.write('<head>');
+            w.document.write('<link rel="stylesheet" href="style.css" type="text/css">');
+            w.document.write('</head>');
+            w.document.write('<body>');
+            w.document.write(divContents);
+            w.document.write('</html>');
+            w.document.write('</body>');
+            w.focus();
+            setTimeout(function(){w.print();},1000);
+            w.document.close();
+            w.print();
+        }
+    </script>
+
+    <body>
+        
+        <form id="form1" action="billing.php" method="post">
+
+                <div id="list">
+                    <table id="tablebill" name="tablebill">
+                        <tr>
+                            <th>Sl No.</th>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Price(Rs).</th>
+                            <th>Unit</th>
+                            <th>Total Price</th>
+                        </tr>
+                        <tr>
+                            <td id="col0"></td>
+                            <td id="col1"></td>
+                            <td id="col2"></td>
+                            <td id="col3"></td>
+                            <td id="col4"></td>
+                            <td id="col5"></td>
+                        </tr>
+                    </table>
+
+                </div>
+
+                <div id="item">
+                    <label for="id">Item ID</label>
+                    <input id="id" name="id" type="text">
+                    <label for="name">Item Name</label>
+                    <input id="name" name="name" type="text"><br>
+                    <label for="price">Price(Rs)</label>
+                    <input id="price" name="price" type="text">
+                    <label for="unit">Unit</label>
+                    <input id="unit" name="unit" type="text">
+                </div>
+
+                <div id="buttons">
+                    <input type="button" id="btn1" value="ADD" onclick="addRow()">
+                    <input type="button" id="btn2" value="CALCULATE" onclick="calculate()">
+                    <input type="button" id="btn3" value="PRINT" onclick="printing()">
+                    <input type="submit" value="BILL AMOUNT">
+                </div>
+
+                <div id="bill">
+                    <div id="heading">
+                    <p id="head1">More Supermarket</p>
+                    </div>
+                    <div id="item2">
+                        <table id="table2">
+                            <tr>
+                                <th>Sl No.</th>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Price(Rs).</th>
+                                <th>Unit</th>
+                                <th>Total Price</th>
+                            </tr>
+
+                            <tr>
+                                <td id="colcp0"></td>
+                                <td id="colcp1"></td>
+                                <td id="colcp2"></td>
+                                <td id="colcp3"></td>
+                                <td id="colcp4"></td>
+                                <td id="colcp5"></td>
+                            </tr>
+
+                        </table>
+
+                        <div id="total" name="total"></div>
+                        <div id="discount" name="discount"></div>
+                        <div id="finalVal" name="finalVal"></div>
+
+                    </div>
+                    
+                    
+                </div>
+
+
+        </form>
+
+
+
+    </body>
+</html>
