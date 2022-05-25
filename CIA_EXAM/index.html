@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INDIVIDUAL DETAILS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Baloo Bhai 2', cursive;
+        }
+
+        body {
+            /* background-color: #271758; */
+            background-image: linear-gradient(to right, rgba(32, 24, 88,0.5), rgba(32, 24, 88,1));
+            color: rgb(126, 189, 145);
+        }
+
+        .pform {
+            background-color: rgba(25, 104, 17, 0.7);
+            border: 3px solid rgb(127, 129, 177);
+            border-radius: 3%;
+            margin: auto;
+            width: 50%;
+        }
+        .header{
+            width: 50%;
+            margin: auto;
+            background-image: linear-gradient(#003E17, #0F5D2C);
+            margin-bottom: 5px;
+            border: 3px solid rgb(127, 129, 177);
+            border-radius: 10%;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1 class="header">ENTER INFO</h1>
+    <div class="pform">
+        <form action="info.php" method="POST">
+            <table>
+                <tr>
+                    <td>Name:</td>
+                    <td><input type="text" name="name" required placeholder="Enter your name"></td>
+                </tr>
+                <tr>
+                    <td>Guardian's Name:</td>
+                    <td><input type="text" name="guardian_name" required placeholder="Enter Guardian's Names"></td>
+                </tr>
+                <tr>
+                    <td>Address:</td>
+                    <td><textarea name="address" cols="20" rows="5"></textarea></td>
+                </tr>
+                <tr>
+                    <td>Gender:</td>
+                    <td><input type="radio" value="m" name="gender">Male &nbsp; <input type="radio" value="f"
+                            name="gender">Female</td>
+                </tr>
+                <tr>
+                    <td>Contact Number(10 digit format):</td>
+                    <td><input type="text" name="contact" title="Wrong input" pattern="[1-9]{1}[0-9]{9}" required placeholder="Enter Phone Number"> </td>
+                </tr>
+                <tr>
+                    <td valign="top">Course(s) Applied for:</td>
+                    <td><input type="checkbox" name="course[]" value="Computer Science">Computer Science<br>
+                        <input type="checkbox" name="course[]" value="Commerce">Commerce<br>
+                        <input type="checkbox" name="hcourse]" value="Economics">Economics<br>
+                        <input type="checkbox" name="course[]" value="History and Geography">History and Geography<br>
+                        <input type="checkbox" name="course[]" value="Civil Engineering">Civil Engineering<br>
+                        <input type="checkbox" name="course[]" value="Geology">Geology<br>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td></td>
+                    <td><input type="reset" /> &nbsp; <input type="submit" /></td>
+                </tr>
+
+            </table>
+
+
+        </form>
+    </div>
+</body>
+
+</html>
