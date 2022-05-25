@@ -1,0 +1,10 @@
+Name : rik,Reg No. 123
+C programming : 80
+Data Structure: : 100
+AI : 85
+Networking: 50
+Frontend & Backend Design: 90
+Total Marks :405
+Total Marks :405
+Total Marks :405
+Total Marks :405

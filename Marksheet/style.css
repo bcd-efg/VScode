@@ -1,0 +1,154 @@
+body{
+    background-color: #4f74ec;
+    color : white;
+    scroll-behavior: smooth;
+}
+
+h2{
+    text-align: center;
+    font-style: normal;
+    font-family :'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: lighter;
+    font-size: x-large;
+    color: white;
+}
+
+h4{
+    text-align: center;
+}
+
+.cardviewHeader{
+    margin-top: 10px;
+    background-color: midnightblue;
+    width: 100%;
+    height :min-content;
+    padding: 5px;
+    ;
+    border-radius: 30px;
+}
+
+input[type=text], select, textarea {
+    width: 70%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    float: right;
+    font-style: bold;
+}
+
+html {
+    scroll-behavior: smooth;
+  }
+  
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+  
+input[type=submit] {
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+    width: 170px;
+}
+
+input[type=reset] {
+    background-color: #c4190d;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+    width: 170px;
+}
+  
+select {
+    border-color: #ccc;
+    float: right;
+    text-align: center;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+input[type=reset]:hover {
+    background-color: #ff0a0a;
+}
+  
+  
+.formholder {
+    width: 50%;
+    height: auto;
+    border-radius: 10px;
+    background-color: #4f4f4f;
+    padding: 20px;
+    margin-top: 30px;
+    left: 25%;
+    position: relative;
+    
+}
+
+button{
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}
+
+
+.marksholder {
+    margin-top: 30px;
+    width: 80%;
+    height: auto;
+    border-radius: 10px;
+    background-color: #555555;
+    padding: 20px;
+    position: relative;
+    left: 10%;
+    
+}
+  
+.repotsection{
+    margin-top: 30px;
+    width: 80%;
+    height: auto;
+    border-radius: 10px;
+    background-color: #555555;
+    padding: 20px;
+    position: relative;
+    left: 10%;
+}
+
+td{
+    text-align: center;
+}
+
+table.GeneratedTable {
+    width: 100%;
+    background-color: #ffffff;
+    border-collapse: collapse;
+    border-width: 2px;
+    border-color: #ffcc00;
+    border-style: solid;
+    color: #000000;
+}
+    
+table.GeneratedTable td, table.GeneratedTable th {
+    border-width: 2px;
+    border-color: #ffcc00;
+    border-style: solid;
+    padding: 3px;
+}
+    
+table.GeneratedTable thead {
+    background-color: #ffcc00;
+}
